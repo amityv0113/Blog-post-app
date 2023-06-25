@@ -14,11 +14,12 @@ router.post('/createuser',[
     body('email','Enter valid email').isEmail(),
     body('password','password must be atleast 5 characters').isLength({min:5})
 ],async (request,response)=>{
+    let success =false
     // if there are errors return bad request and errors 
     const errors =validationResult(request)
     if (!errors.isEmpty())
     {
-        return response.status(400).json({errors:errors.array()})
+        return response.status(400).json({success,errors:errors.array()})
     }
 
     try{
@@ -27,7 +28,7 @@ router.post('/createuser',[
         //console.log(user)
         if (user)
         {
-            return response.status(400).json({error:"sorry a user with this email is already exist"})
+            return response.status(400).json({success, error:"sorry a user with this email is already exist"})
         }
         // hash password 
         const salt = await bcrypt.genSalt(10)
@@ -48,7 +49,8 @@ router.post('/createuser',[
             }
         }
         const token = jwt.sign(data, privateKey);
-        response.json({authtoken:token})
+        success=true
+        response.json({success, authtoken:token})
     }catch(e){
         console.error(e.message)
         response.status(500).send("Some error occurred:" + e)
@@ -62,10 +64,11 @@ router.post('/login',[
     body('email','enter valid email').isEmail(),
     body('password','password cannot be blank').exists(),
 ] , async (request, response) => {
+    let success =false
     // if there is error, return bad request and the error 
     const errors = validationResult(request)
     if (!errors.isEmpty()){
-        return response.status(400).json({errors:errors.array()})
+        return response.status(400).json({success,errors:errors.array()})
     }
 
     const {email, password } = request.body 
@@ -74,14 +77,14 @@ router.post('/login',[
         let user =await Users.findOne({email}) 
         if (!user){
             return response.status(400).json(
-                { error:'please try to login with correct credentials'}
+                { success,error:'please try to login with correct credentials'}
             )
         }
         const passwordCompare = await bcrypt.compare(password, user.password )
         if (!passwordCompare)
         {
             return response.status(400).json(
-                { error:'please try to login with correct credentials'}
+                { success,error:'please try to login with correct credentials'}
             )
         }
 
@@ -93,7 +96,8 @@ router.post('/login',[
             }
         }
         const token = jwt.sign(data, privateKey);
-        response.json({authtoken:token})
+        success=true
+        response.json({success,authtoken:token})
     }catch(e){
         console.error(e.message)
         response.status(500).send("Internal server error")
