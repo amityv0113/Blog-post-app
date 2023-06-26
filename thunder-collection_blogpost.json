@@ -1,0 +1,190 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "blogpost",
+    "dateExported": "2023-06-25T21:18:58.320Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "44997af3-0ad0-4fb1-b902-be9d6e5f0ef9",
+            "name": "authentication",
+            "containerId": "",
+            "created": "2023-06-21T11:42:42.853Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "3508b109-1647-4f2f-9f74-ac9e7f1d52b9",
+            "name": "blog",
+            "containerId": "",
+            "created": "2023-06-22T12:48:52.910Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "f10a4a49-109d-4be1-b845-e2055200b8f2",
+            "colId": "52a30ffc-782a-43e0-919f-274ba0a0ed0d",
+            "containerId": "44997af3-0ad0-4fb1-b902-be9d6e5f0ef9",
+            "name": "create new user ",
+            "url": "http://localhost:5000/api/auth/createuser",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-06-21T11:43:28.901Z",
+            "modified": "2023-06-23T07:10:45.052Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"AMit4\",\n  \"email\":\"helllqqqqq@gmail.com\",\n  \"password\":\"hello\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9a66e245-e255-4736-b608-f190e1559559",
+            "colId": "52a30ffc-782a-43e0-919f-274ba0a0ed0d",
+            "containerId": "44997af3-0ad0-4fb1-b902-be9d6e5f0ef9",
+            "name": "user login",
+            "url": "http://localhost:5000/api/auth/login",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-06-22T07:55:22.660Z",
+            "modified": "2023-06-23T07:10:43.690Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"helllqqqqq@gmail.com\",\n  \"password\":\"hello\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "90b4ee9d-9ede-4be8-b1f4-ae81a4fc82f2",
+            "colId": "52a30ffc-782a-43e0-919f-274ba0a0ed0d",
+            "containerId": "44997af3-0ad0-4fb1-b902-be9d6e5f0ef9",
+            "name": "get user by Id",
+            "url": "http://localhost:5000/api/auth/getuser",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-06-22T08:42:53.843Z",
+            "modified": "2023-06-23T07:10:41.349Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5M2YyNmJjYjIyYWEzNGY1NDI5YTU5In0sImlhdCI6MTY4NzQyODAyMH0.tjTcwgCuwWk-86cMazIisGGn0GmH1YtZWSzNkwJUQtA"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "aea3fe29-6b65-4a19-a6f5-922783f90283",
+            "colId": "52a30ffc-782a-43e0-919f-274ba0a0ed0d",
+            "containerId": "3508b109-1647-4f2f-9f74-ac9e7f1d52b9",
+            "name": "fetch all blog",
+            "url": "http://localhost:5000/api/blog/fetchallblogs",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-06-22T12:49:41.875Z",
+            "modified": "2023-06-23T07:10:58.210Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5M2YyNmJjYjIyYWEzNGY1NDI5YTU5In0sImlhdCI6MTY4NzQyODAyMH0.tjTcwgCuwWk-86cMazIisGGn0GmH1YtZWSzNkwJUQtA"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "14ddb401-f60c-469e-9b33-be960909282b",
+            "colId": "52a30ffc-782a-43e0-919f-274ba0a0ed0d",
+            "containerId": "3508b109-1647-4f2f-9f74-ac9e7f1d52b9",
+            "name": "create blog",
+            "url": "http://localhost:5000/api/blog/createblog",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-06-22T16:48:28.059Z",
+            "modified": "2023-06-23T13:06:05.507Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5M2YyNmJjYjIyYWEzNGY1NDI5YTU5In0sImlhdCI6MTY4NzQyODAyMH0.tjTcwgCuwWk-86cMazIisGGn0GmH1YtZWSzNkwJUQtA"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"amit blog 6\",\n  \"categories\":\"new zxyz 6\",\n  \"discription\":\"dklsvnslvnvsvsdn 6\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8f995646-08db-410e-a95d-3e3608da8ad8",
+            "colId": "52a30ffc-782a-43e0-919f-274ba0a0ed0d",
+            "containerId": "3508b109-1647-4f2f-9f74-ac9e7f1d52b9",
+            "name": "fetch blog for specific user ",
+            "url": "http://localhost:5000/api/blog/fetchallblogsforuser",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-06-22T16:57:30.804Z",
+            "modified": "2023-06-23T13:05:04.679Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5M2YyNmJjYjIyYWEzNGY1NDI5YTU5In0sImlhdCI6MTY4NzQyODAyMH0.tjTcwgCuwWk-86cMazIisGGn0GmH1YtZWSzNkwJUQtA"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9a5249b7-51c5-4889-a637-0659d8a3ea68",
+            "colId": "52a30ffc-782a-43e0-919f-274ba0a0ed0d",
+            "containerId": "3508b109-1647-4f2f-9f74-ac9e7f1d52b9",
+            "name": "update blog",
+            "url": "http://localhost:5000/api/blog/updateblog/6494a81d634dba276c75c46e",
+            "method": "PUT",
+            "sortNum": 130000,
+            "created": "2023-06-22T19:54:28.075Z",
+            "modified": "2023-06-24T22:31:10.541Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5M2YyNmJjYjIyYWEzNGY1NDI5YTU5In0sImlhdCI6MTY4NzQyODAyMH0.tjTcwgCuwWk-86cMazIisGGn0GmH1YtZWSzNkwJUQtA"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"categories\":\"development\",\n\"description\":\"ndyutyftyeed to learn as part of learning proce ss\",\n\"title\":\"helllo reactjs updated\"\ndescription\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f5eb75a0-7ebb-49b0-babd-9ea9e99e1979",
+            "colId": "52a30ffc-782a-43e0-919f-274ba0a0ed0d",
+            "containerId": "3508b109-1647-4f2f-9f74-ac9e7f1d52b9",
+            "name": "delete blog",
+            "url": "http://localhost:5000/api/blog/deleteblog/649480cea37450e1b0792596",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2023-06-22T20:37:44.466Z",
+            "modified": "2023-06-23T07:11:24.239Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5M2YyNmJjYjIyYWEzNGY1NDI5YTU5In0sImlhdCI6MTY4NzQyODAyMH0.tjTcwgCuwWk-86cMazIisGGn0GmH1YtZWSzNkwJUQtA"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
