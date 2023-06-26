@@ -54,7 +54,7 @@ router.post('/createblog', fetchuser,[
     }
 })
 
-//Route 3: update existing blog
+//Route 3: update existing blog for specific user 
 router.put('/updateblog/:id', fetchuser,[
     body('title','enter valid title').isLength( {min:3}),
     body('discription','discription must be atleast 5 characters').isLength( {min:5}),

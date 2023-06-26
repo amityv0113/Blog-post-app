@@ -27,12 +27,5 @@ const blogSchema  = new mongoose.Schema({
     }
 })
 
-// blogSchema.pre('validate',function(next){
-//     if (this.discription)
-//     {
-//         this.sanitizehtml = dompurify.sanitize(marked(this.discription))
-//     }
-//     next()
-// })
 
 module.exports = mongoose.model('Blogs', blogSchema)
